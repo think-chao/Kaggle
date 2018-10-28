@@ -5,7 +5,7 @@ import caffe
 import numpy as np
 import pandas as pd
 deploy_path = './deploy.prototxt'
-caffemodel_path = './lenet_iter_3920.caffemodel'
+caffemodel_path = './lenet_iter_2000.caffemodel'
 caffe.set_mode_cpu()
 clf = caffe.Classifier(deploy_path, caffemodel_path, image_dims=(28, 28))
 test = pd.read_csv('../data/test.csv')
