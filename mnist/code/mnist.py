@@ -11,7 +11,7 @@ import caffe
 from caffe import layers as L, params as P
 from caffe.proto import caffe_pb2
 
-train_data_path = '../data/train.csv'6
+train_data_path = '../data/train.csv'
 test_data_path = '../data/test.csv'
 
 train_data = pd.read_csv(train_data_path).values.astype(np.uint8)
@@ -100,8 +100,8 @@ def gen_solver(train_net_path, test_net_path):
     s.gamma = 0.0001
     s.power = 0.75
     s.display = 100
-    s.max_iter = 3780
-    s.snapshot = 1000
+    s.max_iter = 11340
+    s.snapshot = 5000
     s.snapshot_prefix = 'lenet'
     s.solver_mode = caffe_pb2.SolverParameter.CPU
     with open('solver.prototxt', 'w') as f:
